@@ -1,0 +1,6 @@
+{
+  "name": "LUMÉRA",
+  "description": "LUMÉRA — Beauty, Refined. Premium cosmetics and luxury skincare e-commerce website.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
