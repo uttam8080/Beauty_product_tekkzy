@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: 'Getai Grotesk';
+  src: url('https://raw.githubusercontent.com/a35hie/Fonts/master/DT%20Getai%20Grotesk%20Display/Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-getai {
+  font-family: 'Getai Grotesk', system-ui, sans-serif;
+}
+
+@font-face {
   font-family: 'Squealer';
   src: url('/fonts/Squealer.otf') format('opentype');
   font-weight: normal;

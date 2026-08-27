@@ -7,7 +7,7 @@ export const BestSellersSection: React.FC = () => {
   const bestSellers = PRODUCTS.filter(p => p.isBestSeller).slice(0, 4);
 
   return (
-    <section className="py-20 bg-white border-y border-[#E8DCCE]/60">
+    <section className="py-20 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

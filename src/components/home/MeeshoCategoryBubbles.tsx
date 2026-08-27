@@ -101,11 +101,11 @@ export const MeeshoCategoryBubbles: React.FC = () => {
   return (
     <section 
       id="category-bubbles-ticker"
-      className="relative bg-white border-b border-[#EAE3DC] py-4.5 overflow-hidden select-none"
+      className="relative bg-[#FFCCD5] border-b border-[#EAE3DC] py-4.5 overflow-hidden select-none"
     >
       {/* Subtle edge fade overlays for infinite seamless aesthetic */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#FFCCD5] via-[#FFCCD5]/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#FFCCD5] via-[#FFCCD5]/80 to-transparent z-10" />
 
       {/* Auto Moving Marquee Track */}
       <div className="w-full overflow-hidden">

@@ -38,7 +38,7 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-[#FAF8F5] border-t border-[#E8DCCE]/70">
+    <section className="py-24 bg-[#FAF8F5]">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         
         {/* Section Header */}

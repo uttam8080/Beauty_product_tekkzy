@@ -5,28 +5,55 @@ import { CategorySection } from '../components/home/CategorySection';
 import { BestSellersSection } from '../components/home/BestSellersSection';
 import { EditorialSection } from '../components/home/EditorialSection';
 import { RoutineBuilder } from '../components/home/RoutineBuilder';
-
+import { AboutSection } from '../components/home/AboutSection';
+import { OurStorySection } from '../components/home/OurStorySection';
+import { TestimonialsSection } from '../components/home/TestimonialsSection';
+import { StorehouseShowcase } from '../components/home/StorehouseShowcase';
 import { InstagramGrid } from '../components/home/InstagramGrid';
 import { FaqSection } from '../components/home/FaqSection';
+import { WavyBubbleDivider } from '../components/ui/WavyBubbleDivider';
 
 export const Home: React.FC = () => {
   return (
     <div className="overflow-x-clip bg-[#FAF8F5]">
       <Hero />
-      <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
       <MeeshoCategoryBubbles />
       <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
+      
       <CategorySection />
-      <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
+      
+      {/* 2. Divider: Categories to Best Sellers */}
+      <WavyBubbleDivider topColor="#ffffff" bottomColor="#FAF8F5" height={80} />
+      
       <BestSellersSection />
-      <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
+      
+      {/* 3. Divider: Best Sellers to Editorial */}
+      <WavyBubbleDivider topColor="#FAF8F5" bottomColor="#ffffff" height={80} />
+      
       <EditorialSection />
-      <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
-      <RoutineBuilder />
-      <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
+      
 
+      <StorehouseShowcase />
+      
+      {/* 5. Divider: Storehouse to About Us */}
+      <WavyBubbleDivider topColor="#FAF8F5" bottomColor="#ffffff" height={80} />
+      
+      <AboutSection />
+      
+
+      <OurStorySection />
+      
+
+      <TestimonialsSection />
+      
+      {/* 8. Divider: Testimonials to Instagram Lookbook */}
+      <WavyBubbleDivider topColor="#ffffff" bottomColor="#ffffff" bubbleColor="#E8DCCE" height={60} />
+      
       <InstagramGrid />
-      <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
+      
+      {/* 9. Divider: Instagram to FAQ */}
+      <WavyBubbleDivider topColor="#ffffff" bottomColor="#FAF8F5" height={80} />
+      
       <FaqSection />
     </div>
   );

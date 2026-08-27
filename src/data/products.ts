@@ -12,7 +12,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.9,
     reviewsCount: 342,
     images: [
-      'https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?q=80&w=1000&auto=format&fit=crop',
+      '/transparent-products/velvet-glow-foundation.png',
       'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1583001809873-a128495da465?q=80&w=1000&auto=format&fit=crop'
@@ -49,12 +49,12 @@ export const PRODUCTS: Product[] = [
     tagline: '4x more hydrating than Hyaluronic Acid for bouncy, glass skin.',
     category: 'skincare',
     subcategory: 'Serums',
-    price: 1799,
+    price: 1799,  
     originalPrice: 2099,
     rating: 5.0,
     reviewsCount: 518,
     images: [
-      'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop',
+      '/transparent-products/dew-drop-serum.png',
       'https://images.unsplash.com/photo-1608248597359-58673f1d82f7?q=80&w=1000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1000&auto=format&fit=crop'
     ],
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviewsCount: 284,
     images: [
-      'https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=1000&auto=format&fit=crop',
+      '/transparent-products/rose-silk-lip-tint.png',
       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1599732487372-b7b51b32f228?q=80&w=1000&auto=format&fit=crop'
     ],
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.9,
     reviewsCount: 412,
     images: [
-      'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=1000&auto=format&fit=crop',
+      '/transparent-products/cloud-skin-moisturizer.png',
       'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop'
     ],

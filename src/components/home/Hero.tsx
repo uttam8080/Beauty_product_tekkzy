@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import { FanOpacityDivider } from '../ui/FanOpacityDivider';
+import { WavyBubbleDivider } from '../ui/WavyBubbleDivider';
 
 interface HeroSlide {
   id: string;
@@ -283,9 +283,9 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Fan Opacity Section Divider (Translucent Layered Wings at Section Bottom) */}
+      {/* Wavy Bubble Section Divider */}
       <div className="absolute bottom-0 left-0 right-0 z-30 pointer-events-none">
-        <FanOpacityDivider position="bottom" color="#FAF8F5" />
+        <WavyBubbleDivider bottomColor="#FFCCD5" bubbleColor="#FFCCD5" height={110} />
       </div>
     </section>
   );
