@@ -49,7 +49,7 @@ export const FaqSection: React.FC = () => {
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif" }} className="italic text-5xl sm:text-6xl lg:text-7xl text-[#2C2724] font-semibold tracking-wide">
             Frequently Asked Questions
           </h2>
-          <p className="text-xs sm:text-sm text-[#786C62] font-light mt-4 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#786C62] font-bold mt-4 leading-relaxed">
             Find immediate answers to questions about our clean botanical formulations, shipping rates, and bespoke skincare rituals.
           </p>
         </div>
