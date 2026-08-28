@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Leaf, ShieldAlert, Check, HelpCircle, ArrowRight } from 'lucide-react';
+import { Check, HelpCircle, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface PhilosophyTile {
   num: string;
   title: string;
   desc: string;
-  icon: React.ReactNode;
 }
 
 export const AboutSection: React.FC = () => {
@@ -18,24 +17,21 @@ export const AboutSection: React.FC = () => {
       num: '01',
       title: 'Bio-Active Peptide Science',
       desc: 'Formulated with multi-molecular weight peptides that penetrate deep within the skin layers to repair the lipid barrier, stimulate collagen synthesis, and restore natural bounce.',
-      icon: <Sparkles className="w-5 h-5 text-[#8C6D53]" />,
     },
     {
       num: '02',
       title: 'French Botanical Infusions',
       desc: 'Every batch is enriched with premium cold-pressed rosehip oils, Damascus rose water, and organic extracts grown sustainably in the organic valleys of Southern France.',
-      icon: <Leaf className="w-5 h-5 text-[#8C6D53]" />,
     },
     {
       num: '03',
       title: 'Conscious & Zero-Compromise',
       desc: '100% vegan, cruelty-free, and dermatologically tested on sensitive skin. Formulated without synthetic dyes, microplastics, or parabens to protect both skin and ocean reefs.',
-      icon: <ShieldAlert className="w-5 h-5 text-[#8C6D53]" />,
     },
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden select-none">
+    <section className="py-16 lg:py-20 bg-white relative overflow-hidden select-none">
       {/* Decorative luxury gradient background accent */}
       <div className="absolute right-0 top-1/4 w-[350px] h-[350px] bg-[#E8DCCE]/30 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 bottom-10 w-[250px] h-[250px] bg-[#FFD6C4]/20 rounded-full blur-[80px] pointer-events-none" />
@@ -56,16 +52,15 @@ export const AboutSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/30 to-transparent" />
             </div>
 
-            {/* Foreground overlapping element (Secondary Photo) */}
             <motion.div 
               initial={{ y: 20 }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="absolute -bottom-8 -right-2 w-[48%] aspect-square rounded-[30px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.1)] border-4 border-[#FAF8F5] hidden sm:block"
+              className="absolute -bottom-8 -right-2 w-[48%] aspect-square rounded-[30px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.1)] border-4 border-[#FAF8F5]"
             >
               <img 
-                src="https://images.unsplash.com/photo-1608248597359-58673f1d82f7?q=80&w=600&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=600&auto=format&fit=crop" 
                 alt="Botanical Active Serums"
                 className="w-full h-full object-cover select-none"
               />
@@ -93,22 +88,22 @@ export const AboutSection: React.FC = () => {
             </span>
 
             {/* Main Editorial Signature Heading */}
-            <h2 className="font-getai uppercase text-3xl sm:text-4xl lg:text-[44px] tracking-wide text-[#2C2724] leading-[1.05] mb-8">
+            <h2 className="font-getai uppercase text-3xl sm:text-4xl lg:text-[40px] tracking-wide text-[#2C2724] leading-[1.05] mb-5">
               We Cultivate <br /> 
               <span 
-                className="text-4xl sm:text-5xl lg:text-[56px] text-[#8C6D53] block mt-2"
+                className="text-4xl sm:text-5xl lg:text-[52px] text-[#8C6D53] block mt-2"
               >
                 True Radiance
               </span>
             </h2>
 
             {/* Tagline Statement */}
-            <p className="text-[#8C6D53] font-serif text-lg italic leading-relaxed mb-6 max-w-xl">
+            <p className="text-[#8C6D53] font-serif text-base sm:text-lg italic leading-relaxed mb-4 max-w-xl">
               "A sanctuary for your daily skin ritual, marrying cold-pressed organic botanicals with dermatological multi-peptide science."
             </p>
 
             {/* Interactive Luxury Highlight Tiles */}
-            <div className="space-y-4 mb-8 max-w-xl">
+            <div className="space-y-2.5 mb-6 max-w-xl">
               {PHILOSOPHY_TILES.map((tile, idx) => {
                 const isActive = activeTile === idx;
 
@@ -116,7 +111,7 @@ export const AboutSection: React.FC = () => {
                   <div
                     key={tile.num}
                     onClick={() => setActiveTile(idx)}
-                    className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
+                    className={`p-3.5 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer ${
                       isActive
                         ? 'bg-white border-[#8C6D53] shadow-[0_8px_30px_rgba(44,39,36,0.03)]'
                         : 'bg-white/40 border-[#E8DCCE]/75 hover:bg-white/60 hover:border-[#8C6D53]/40'
@@ -131,8 +126,8 @@ export const AboutSection: React.FC = () => {
                           {tile.title}
                         </h4>
                       </div>
-                      <div className={`p-1.5 rounded-full transition-transform ${isActive ? 'bg-[#FAF8F5] rotate-180 text-[#8C6D53]' : 'text-[#8C7A6B]/40'}`}>
-                        {tile.icon}
+                      <div className={`p-1 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#8C6D53]' : 'text-[#8C7A6B]/40'}`}>
+                        <ChevronDown className="w-4 h-4" />
                       </div>
                     </div>
 
@@ -140,12 +135,12 @@ export const AboutSection: React.FC = () => {
                       {isActive && (
                         <motion.div
                           initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                          animate={{ height: 'auto', opacity: 1, marginTop: 12 }}
+                          animate={{ height: 'auto', opacity: 1, marginTop: 8 }}
                           exit={{ height: 0, opacity: 0, marginTop: 0 }}
                           transition={{ duration: 0.3, ease: 'easeInOut' }}
                           className="overflow-hidden"
                         >
-                          <p className="text-xs sm:text-[13px] leading-relaxed text-[#5C5046] border-t border-[#FAF8F5] pt-3">
+                          <p className="text-xs sm:text-[13px] leading-relaxed text-[#5C5046] border-t border-[#FAF8F5] pt-2">
                             {tile.desc}
                           </p>
                         </motion.div>
