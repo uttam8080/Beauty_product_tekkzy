@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from 'motion/react';
-import { ShoppingBag, Sparkles, Heart, Clock, Shield, Layers, Droplets, ShieldCheck, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ShoppingBag, ArrowRight, ArrowLeft } from 'lucide-react';
 import { PRODUCTS } from '../../data/products';
 import { useCart } from '../../context/CartContext';
 
@@ -43,8 +43,8 @@ export const StorehouseShowcase: React.FC = () => {
       bgColor: '#D5EBE6', // soft mint/sky green for white tube
       bubbleColor: '#A8DCD0',
       hotspots: {
-        top: { label: 'Prebiotic Complex', icon: <Sparkles className="w-3.5 h-3.5 text-[#155E75]" /> },
-        bottom: { label: '4x Hydration Barrier', icon: <Droplets className="w-3.5 h-3.5 text-[#0369A1]" /> },
+        top: { label: 'Prebiotic Complex' },
+        bottom: { label: '4x Hydration Barrier' },
       },
       tags: ['Hydrating', 'Peptide', 'Squalane', 'Barrier', 'Bouncy'],
     },
@@ -57,8 +57,8 @@ export const StorehouseShowcase: React.FC = () => {
       bgColor: '#DC2626', // solid vibrant red
       bubbleColor: '#EF4444',
       hotspots: {
-        top: { label: 'Soft Satin Tint', icon: <Heart className="w-3.5 h-3.5 text-[#BE123C]" /> },
-        bottom: { label: 'Bulgarian Rose Oil', icon: <Sparkles className="w-3.5 h-3.5 text-[#9F1239]" /> },
+        top: { label: 'Soft Satin Tint' },
+        bottom: { label: 'Bulgarian Rose Oil' },
       },
       tags: ['Satin', 'Nourishing', 'Rosehip', 'Plumping', 'Shine'],
     },
@@ -71,8 +71,8 @@ export const StorehouseShowcase: React.FC = () => {
       bgColor: '#BACEEA', // slate/navy blue for Curology products
       bubbleColor: '#99B9E7',
       hotspots: {
-        top: { label: 'Second-Skin Matte', icon: <ShieldCheck className="w-3.5 h-3.5 text-[#1E3A8A]" /> },
-        bottom: { label: '16H Breathable Wear', icon: <Clock className="w-3.5 h-3.5 text-[#1E3A8A]" /> },
+        top: { label: 'Second-Skin Matte' },
+        bottom: { label: '16H Breathable Wear' },
       },
       tags: ['Niacinamide', 'Non-peeling', 'Coverage', 'Blur', 'Satin'],
     },
@@ -85,8 +85,8 @@ export const StorehouseShowcase: React.FC = () => {
       bgColor: '#FFBFA3', // beautiful warm apricot / orange
       bubbleColor: '#FFD6C4',
       hotspots: {
-        top: { label: 'Barrier Deep Repair', icon: <Shield className="w-3.5 h-3.5 text-[#9A3412]" /> },
-        bottom: { label: '5 Complex Ceramides', icon: <Layers className="w-3.5 h-3.5 text-[#C2410C]" /> },
+        top: { label: 'Barrier Deep Repair' },
+        bottom: { label: '5 Complex Ceramides' },
       },
       tags: ['Soufflé', 'Squalane', 'Soothe', 'Microbiome', 'Hydration'],
     },
@@ -453,9 +453,8 @@ export const StorehouseShowcase: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.8, y: 10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       transition={{ delay: 0.25, duration: 0.4 }}
-                      className="absolute right-0 top-1/4 translate-x-12 -translate-y-6 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/50 flex items-center gap-2 shadow-[0_8px_25px_rgba(0,0,0,0.06)] pointer-events-auto"
+                      className="absolute right-0 top-1/4 translate-x-12 -translate-y-6 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/50 flex items-center justify-center shadow-[0_8px_25px_rgba(0,0,0,0.06)] pointer-events-auto"
                     >
-                      {activeItem.hotspots.top.icon}
                       <span className="text-[10px] font-bold tracking-wide text-[#2C2724] whitespace-nowrap">
                         {activeItem.hotspots.top.label}
                       </span>
@@ -466,9 +465,8 @@ export const StorehouseShowcase: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.8, y: -10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       transition={{ delay: 0.35, duration: 0.4 }}
-                      className="absolute left-0 bottom-1/4 -translate-x-12 translate-y-6 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/50 flex items-center gap-2 shadow-[0_8px_25px_rgba(0,0,0,0.06)] pointer-events-auto"
+                      className="absolute left-0 bottom-1/4 -translate-x-12 translate-y-6 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/50 flex items-center justify-center shadow-[0_8px_25px_rgba(0,0,0,0.06)] pointer-events-auto"
                     >
-                      {activeItem.hotspots.bottom.icon}
                       <span className="text-[10px] font-bold tracking-wide text-[#2C2724] whitespace-nowrap">
                         {activeItem.hotspots.bottom.label}
                       </span>
