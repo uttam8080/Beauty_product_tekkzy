@@ -40,9 +40,21 @@ export const WavyBubbleDivider: React.FC<WavyBubbleDividerProps> = ({
   height = 110,
   className = '',
 }) => {
-  // Use bottomColor for bubbles by default to create contrast if they float in the topColor area,
-  // or topColor if it's defined and distinct.
-  const resolvedBubbleColor = bubbleColor || bottomColor;
+  const [windowWidth, setWindowWidth] = React.useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isSplit = bottomColor === 'editorialSplit';
+  const fillValue = isSplit
+    ? (windowWidth >= 1024 ? 'url(#editorialSplit)' : '#E5ECE4')
+    : bottomColor;
+
+  // Use bottomColor for bubbles by default, or cream if it's the editorial split
+  const resolvedBubbleColor = bubbleColor || (isSplit ? '#FAF8F5' : bottomColor);
 
   return (
     <div
@@ -55,10 +67,16 @@ export const WavyBubbleDivider: React.FC<WavyBubbleDividerProps> = ({
         preserveAspectRatio="none"
         className="w-full h-full block pointer-events-none"
       >
+        <defs>
+          <linearGradient id="editorialSplit" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="50%" stopColor="#E5ECE4" />
+            <stop offset="50%" stopColor="#FAF8F5" />
+          </linearGradient>
+        </defs>
         {/* Organic Asymmetrical Liquid Wave Path */}
         <path
           d="M 0 140 C 150 60, 300 60, 450 140 C 600 220, 800 50, 1000 50 C 1200 50, 1350 170, 1440 170 L 1440 200 L 0 200 Z"
-          fill={bottomColor}
+          fill={fillValue}
         />
 
         {/* Floating Bubble 1 (Large - Left) */}

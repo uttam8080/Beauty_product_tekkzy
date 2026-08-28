@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
       <BestSellersSection />
       
       {/* 3. Divider: Best Sellers to Editorial */}
-      <WavyBubbleDivider topColor="#ffffff" bottomColor="#FAF8F5" height={80} />
+      <WavyBubbleDivider topColor="#ffffff" bottomColor="editorialSplit" height={80} />
       
       <EditorialSection />
       
