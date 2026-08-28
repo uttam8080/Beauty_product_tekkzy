@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Leaf, Shield, Award } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface StoryCard {
@@ -7,7 +6,6 @@ interface StoryCard {
   num: string;
   title: string;
   desc: string;
-  icon: React.ReactNode;
   borderRadius: string;
   bgColor: string;
   floatDuration: number;
@@ -75,17 +73,14 @@ const StoryCardItem: React.FC<{ card: StoryCard; idx: number }> = ({ card, idx }
         <div style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }} className="relative h-full flex flex-col justify-between flex-1">
           
           <div>
-            {/* Header row: Icon & Number Badge */}
+            {/* Header row: Number Badge (replacing custom icon symbols) */}
             <div className="flex items-center justify-between mb-6">
-              {/* Dynamic rotating circle icon frame */}
-              <div className="w-12 h-12 rounded-full bg-white border border-[#E8DCCE]/45 flex items-center justify-center shadow-2xs group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
-                {card.icon}
+              {/* Clean circle number badge */}
+              <div className="w-12 h-12 rounded-full bg-white border border-[#E8DCCE]/45 flex items-center justify-center shadow-2xs group-hover:scale-110 transition-transform duration-300">
+                <span className="text-sm font-serif font-bold text-[#8C6D53]">
+                  {card.num}
+                </span>
               </div>
-
-              {/* Index number badge */}
-              <span className="text-xs font-serif font-bold text-[#8C7A6B]/30 select-none">
-                {card.num}
-              </span>
             </div>
 
             <h4 className="font-sans text-xs sm:text-sm font-black uppercase tracking-widest text-[#2C2724] mb-3">
@@ -110,7 +105,6 @@ export const OurStorySection: React.FC = () => {
       num: '01',
       title: 'Sustainable Origins',
       desc: 'We trace every botanical ingredient back to its source, ensuring ethical harvesting practices that respect the local ecosystem and farmers.',
-      icon: <Leaf className="w-6 h-6 text-[#8C6D53]" />,
       borderRadius: '60px 24px 60px 24px', // organic leaf shape
       bgColor: 'rgba(213, 235, 230, 0.5)', // soft transparent mint green
       floatDuration: 4.5,
@@ -121,7 +115,6 @@ export const OurStorySection: React.FC = () => {
       num: '02',
       title: 'Clinical Efficacy',
       desc: 'Every active peptide serum and ceramide cream undergoes rigorous testing to guarantee transformative, visible skin barrier repair results.',
-      icon: <Shield className="w-6 h-6 text-[#8C6D53]" />,
       borderRadius: '24px 60px 24px 60px', // organic shield shape
       bgColor: 'rgba(255, 214, 196, 0.45)', // soft transparent rose apricot
       floatDuration: 5.2,
@@ -132,7 +125,6 @@ export const OurStorySection: React.FC = () => {
       num: '03',
       title: 'Parisian Craftsmanship',
       desc: 'Formulated in France, combining traditional European botanical wisdom with state-of-the-art green chemistry.',
-      icon: <Award className="w-6 h-6 text-[#8C6D53]" />,
       borderRadius: '60px 60px 24px 24px', // organic dome/apothecary shape
       bgColor: 'rgba(186, 206, 234, 0.45)', // soft transparent slate blue
       floatDuration: 4.8,

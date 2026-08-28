@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Leaf, Shield, Award, Heart, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const About: React.FC = () => {
@@ -53,13 +53,11 @@ export const About: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 <div className="p-4 bg-white rounded-xl border border-[#E8DCCE]">
-                  <Leaf className="w-5 h-5 text-[#8C6D53] mb-2" />
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#2C2724]">Eco-Luxury Packaging</h4>
                   <p className="text-[11px] text-[#786C62] mt-1">Weighted, recyclable Italian flint glass and FSC-certified paper.</p>
                 </div>
 
                 <div className="p-4 bg-white rounded-xl border border-[#E8DCCE]">
-                  <Shield className="w-5 h-5 text-[#8C6D53] mb-2" />
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#2C2724]">Microbiome Friendly</h4>
                   <p className="text-[11px] text-[#786C62] mt-1">pH-balanced to respect your acid mantle and skin resilience.</p>
                 </div>

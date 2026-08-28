@@ -12,15 +12,13 @@ import {
   ShoppingBag,
   Check,
   ChevronRight,
-  Shield,
-  Truck,
-  Leaf,
   ChevronDown,
   MessageSquare,
   Send,
   Droplets,
   RotateCcw,
-  CheckCircle2
+  CheckCircle2,
+  Truck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -381,11 +379,11 @@ export const ProductDetails: React.FC = () => {
                   <span>30-Day Ritual Guarantee</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-[#8C6D53] shrink-0" />
+                  <Check className="w-4 h-4 text-[#8C6D53] shrink-0" />
                   <span>100% Vegan & Clean</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-[#8C6D53] shrink-0" />
+                  <Check className="w-4 h-4 text-[#8C6D53] shrink-0" />
                   <span>Dermatologist Approved</span>
                 </div>
               </div>
@@ -408,33 +406,21 @@ export const ProductDetails: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="p-6 bg-white rounded-2xl border border-[#E8DCCE] text-center space-y-2">
-              <div className="w-10 h-10 rounded-full bg-[#8C6D53]/15 text-[#8C6D53] flex items-center justify-center mx-auto">
-                <Leaf className="w-5 h-5" />
-              </div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#2C2724]">100% Vegan</h4>
               <p className="text-[11px] text-[#786C62]">Zero animal derivatives or byproducts ever used.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#E8DCCE] text-center space-y-2">
-              <div className="w-10 h-10 rounded-full bg-[#8C6D53]/15 text-[#8C6D53] flex items-center justify-center mx-auto">
-                <Shield className="w-5 h-5" />
-              </div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#2C2724]">Leaping Bunny</h4>
               <p className="text-[11px] text-[#786C62]">Certified 100% cruelty-free at every supply step.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#E8DCCE] text-center space-y-2">
-              <div className="w-10 h-10 rounded-full bg-[#8C6D53]/15 text-[#8C6D53] flex items-center justify-center mx-auto">
-                <Droplets className="w-5 h-5" />
-              </div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#2C2724]">Derm Tested</h4>
               <p className="text-[11px] text-[#786C62]">Patch-tested on hyper-sensitive and reactive skin.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#E8DCCE] text-center space-y-2">
-              <div className="w-10 h-10 rounded-full bg-[#8C6D53]/15 text-[#8C6D53] flex items-center justify-center mx-auto">
-                <Shield className="w-5 h-5" />
-              </div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#2C2724]">No Toxic Fillers</h4>
               <p className="text-[11px] text-[#786C62]">Free from parabens, synthetic fragrances, and talc.</p>
             </div>

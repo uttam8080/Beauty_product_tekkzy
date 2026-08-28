@@ -1,6 +1,6 @@
 import React from 'react';
 import { TESTIMONIALS } from '../../data/content';
-import { Star, CheckCircle, Sparkles } from 'lucide-react';
+import { Star, CheckCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const TestimonialsSection: React.FC = () => {
@@ -136,7 +136,6 @@ export const TestimonialsSection: React.FC = () => {
         {/* EDITORIAL CENTERED HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8C6D53]/8 border border-[#8C6D53]/15 text-[#8C6D53] text-[9px] font-bold uppercase tracking-[0.15em] mb-4 pointer-events-none">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Verified Customer Reviews</span>
           </div>
           
