@@ -113,7 +113,7 @@ export const AboutSection: React.FC = () => {
                     onClick={() => setActiveTile(idx)}
                     className={`p-3.5 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer ${
                       isActive
-                        ? 'bg-white border-[#8C6D53] shadow-[0_8px_30px_rgba(44,39,36,0.03)]'
+                        ? 'bg-[#FAF8F5] border-[#8C6D53] shadow-[0_8px_30px_rgba(44,39,36,0.03)]'
                         : 'bg-white/40 border-[#E8DCCE]/75 hover:bg-white/60 hover:border-[#8C6D53]/40'
                     }`}
                   >
