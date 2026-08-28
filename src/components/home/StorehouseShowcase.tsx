@@ -189,7 +189,7 @@ export const StorehouseShowcase: React.FC = () => {
       className="relative bg-[#e3dcd2] h-[350vh] sm:h-[400vh]"
     >
       {/* Sticky Fullscreen Container */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
 
         {/* Wavy Section Divider (zIndex: 30) - Masks the background card along the wave curve */}
         <div className="absolute top-0 left-0 w-full h-[80px] overflow-hidden leading-none select-none pointer-events-none z-30 bg-transparent">
