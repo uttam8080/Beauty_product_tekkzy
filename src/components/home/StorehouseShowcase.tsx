@@ -303,26 +303,7 @@ export const StorehouseShowcase: React.FC = () => {
         </div>
 
 
-        {/* 1. Giant Background Wordmark behind the card (zIndex: 15) */}
-        <div className="absolute left-6 top-8 lg:left-12 lg:top-16 z-15 overflow-hidden pointer-events-none select-none">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`text-${activeItem.id}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 0.12, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.45, ease: 'easeOut' }}
-              className="flex flex-col leading-[0.85]"
-            >
-              <span className="font-serif font-black text-7xl sm:text-9xl lg:text-[130px] uppercase text-[#1C1917] tracking-tight">
-                {activeItem.shortName.split(' ')[0]}
-              </span>
-              <span className="font-serif italic font-light text-6xl sm:text-8xl lg:text-[105px] text-[#1C1917] pl-4">
-                {activeItem.shortName.split(' ')[1] || 'Essence'}
-              </span>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+
 
         {/* 2. Dynamic Asymmetrical Background Card (zIndex: 25) */}
         {/* Zero-gap layout: flush with top, bottom, and left on desktop (borderRadius: 150px 0px 0px 380px) */}
