@@ -186,11 +186,11 @@ export const StorehouseShowcase: React.FC = () => {
     <section
       ref={containerRef}
       id="storehouse-showcase-section"
-      className="relative bg-[#FAF8F5] h-[350vh] sm:h-[400vh]"
+      className="relative bg-[#e3dcd2] h-[350vh] sm:h-[400vh]"
     >
       {/* Sticky Fullscreen Container */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        
+
         {/* Wavy Section Divider (zIndex: 30) - Masks the background card along the wave curve */}
         <div className="absolute top-0 left-0 w-full h-[80px] overflow-hidden leading-none select-none pointer-events-none z-30 bg-transparent">
           <svg viewBox="0 0 1440 200" preserveAspectRatio="none" className="w-full h-full block">
@@ -301,7 +301,8 @@ export const StorehouseShowcase: React.FC = () => {
             />
           </svg>
         </div>
-        
+
+
         {/* 1. Giant Background Wordmark behind the card (zIndex: 15) */}
         <div className="absolute left-6 top-8 lg:left-12 lg:top-16 z-15 overflow-hidden pointer-events-none select-none">
           <AnimatePresence mode="wait">
@@ -443,7 +444,7 @@ export const StorehouseShowcase: React.FC = () => {
               className="absolute top-0 right-0 w-full h-[48vh] sm:h-[52vh] lg:w-[54vw] lg:h-full flex items-center justify-center p-8 will-change-transform pointer-events-none"
             >
               <div className="relative w-full h-full max-w-[260px] sm:max-w-[350px] lg:max-w-[460px] aspect-square flex items-center justify-center">
-                
+
                 {/* Active Interactive Hotspots (Badges) floating in front of product */}
                 {diff === 0 && (
                   <div className="absolute inset-0 z-40 pointer-events-none select-none">
@@ -507,10 +508,10 @@ export const StorehouseShowcase: React.FC = () => {
         {/* 4. Content Grid: Contains the text columns, description details and thumbnails */}
         {/* Pointers: pointer-events-none on parent grid, pointer-events-auto on interactive elements */}
         <div className="relative w-full h-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-10 lg:py-16 pointer-events-none z-40">
-          
+
           {/* LEFT COLUMN: Heading, Paragraph, CTA and Thumbnail Selectors */}
           <div className="w-full lg:w-[46%] flex flex-col justify-center h-full pt-[46vh] sm:pt-[50vh] lg:pt-0 pointer-events-auto select-text">
-            
+
             <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#8C6D53] block mb-2 pointer-events-none">
               Atelier Showcase
             </span>
@@ -570,20 +571,32 @@ export const StorehouseShowcase: React.FC = () => {
                   <button
                     key={item.id}
                     onClick={() => handleItemClick(idx)}
-                    className={`flex flex-col items-center justify-between p-2 w-20 h-24 sm:w-22 sm:h-26 rounded-2xl border transition-all cursor-pointer ${
-                      isActive
-                        ? 'bg-white border-[#8C6D53] shadow-[0_8px_20px_rgba(0,0,0,0.04)] scale-105 z-10'
-                        : 'bg-white/40 border-[#E8DCCE] hover:border-[#8C6D53]/40 hover:bg-white/70'
-                    }`}
+                    className={`relative flex flex-col items-end justify-end w-20 h-24 sm:w-22 sm:h-26 rounded-2xl border overflow-hidden transition-all cursor-pointer ${isActive
+                      ? 'border-[#8C6D53] shadow-[0_8px_20px_rgba(0,0,0,0.12)] scale-105 z-10'
+                      : 'border-[#E8DCCE] hover:border-[#8C6D53]/40'
+                      }`}
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center pointer-events-none">
+                    {/* Lifestyle background image */}
+                    <img
+                      src={product.images[0]}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
+                    />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none" />
+                    {/* Transparent product image */}
+                    <div className="absolute top-1 right-1 w-8 h-8 sm:w-10 sm:h-10 drop-shadow-md pointer-events-none">
                       <img
                         src={`/transparent-products/${product.id}.png`}
                         alt={product.name}
                         className="w-full h-full object-contain"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = 'none';
+                        }}
                       />
                     </div>
-                    <span className="text-[9px] font-black text-[#2C2724] truncate w-full text-center tracking-wide select-none">
+                    {/* Name label at bottom */}
+                    <span className="relative z-10 text-[8px] font-black text-white truncate w-full text-center tracking-wide select-none px-1 pb-1.5">
                       {item.shortName}
                     </span>
                   </button>

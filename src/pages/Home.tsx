@@ -15,7 +15,7 @@ import { WavyBubbleDivider } from '../components/ui/WavyBubbleDivider';
 
 export const Home: React.FC = () => {
   return (
-    <div className="overflow-x-clip bg-[#FAF8F5]">
+    <div className="overflow-x-clip bg-[#e3dcd2]">
       <Hero />
       <MeeshoCategoryBubbles />
       <div className="w-full h-[1.5px]" style={{ background: 'linear-gradient(to right, transparent, rgba(44, 39, 36, 0.25), transparent)' }} />
@@ -23,12 +23,12 @@ export const Home: React.FC = () => {
       <CategorySection />
       
       {/* 2. Divider: Categories to Best Sellers */}
-      <WavyBubbleDivider topColor="#ffffff" bottomColor="#FAF8F5" height={80} />
+      <WavyBubbleDivider topColor="#FAF8F5" bottomColor="#ffffff" height={80} />
       
       <BestSellersSection />
       
       {/* 3. Divider: Best Sellers to Editorial */}
-      <WavyBubbleDivider topColor="#FAF8F5" bottomColor="#ffffff" height={80} />
+      <WavyBubbleDivider topColor="#ffffff" bottomColor="#FAF8F5" height={80} />
       
       <EditorialSection />
       
@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
       <StorehouseShowcase />
       
       {/* 5. Divider: Storehouse to About Us */}
-      <WavyBubbleDivider topColor="#FAF8F5" bottomColor="#ffffff" height={80} />
+      <WavyBubbleDivider topColor="#e3dcd2" bottomColor="#ffffff" height={80} />
       
       <AboutSection />
       
