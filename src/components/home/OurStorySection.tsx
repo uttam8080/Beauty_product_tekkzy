@@ -21,7 +21,7 @@ const StoryCardItem: React.FC<{ card: StoryCard; idx: number }> = ({ card, idx }
     const box = cardEl.getBoundingClientRect();
     const x = e.clientX - box.left - box.width / 2;
     const y = e.clientY - box.top - box.height / 2;
-    
+
     // Divide by a factor to control maximum tilt angle
     setRotateX(-y / 15);
     setRotateY(x / 15);
@@ -71,7 +71,7 @@ const StoryCardItem: React.FC<{ card: StoryCard; idx: number }> = ({ card, idx }
       >
         {/* 3D Depth Card Content container */}
         <div style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }} className="relative h-full flex flex-col justify-between flex-1">
-          
+
           <div>
             {/* Header row: Number Badge (replacing custom icon symbols) */}
             <div className="flex items-center justify-between mb-6">
@@ -134,7 +134,7 @@ export const OurStorySection: React.FC = () => {
 
   return (
     <section className="pt-40 pb-28 bg-[#FAF8F5] relative overflow-hidden select-none">
-      
+
       {/* Wavy Section Divider (zIndex: 10) - Masks the corner accents along the wave curve */}
       <div className="absolute top-0 left-0 w-full h-[80px] overflow-hidden leading-none select-none pointer-events-none z-10 bg-transparent">
         <svg viewBox="0 0 1440 200" preserveAspectRatio="none" className="w-full h-full block">
@@ -261,7 +261,7 @@ export const OurStorySection: React.FC = () => {
       {/* Content wrapper */}
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          
+
           <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#8C6D53] block mb-4 pointer-events-none">
             Our Origins & Journey
           </span>
@@ -272,10 +272,6 @@ export const OurStorySection: React.FC = () => {
             <span className="text-4xl sm:text-5xl lg:text-[56px] text-[#8C6D53] block mt-2">Desire for Better</span>
           </h2>
 
-          <p className="text-[#5C5046] font-serif font-bold text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-16 select-text">
-            The LUMÉRA journey began with a simple realization: the skincare industry was overflowing with complex, synthetic formulas that compromised long-term skin health. Our founder set out to create a sanctuary of clean, efficacious formulations that honor the skin's natural intelligence. What started as a small apothecary has blossomed into a global movement for mindful beauty.
-          </p>
-          
           {/* Grid of 3 Luxury Story Cards with custom shapes, skincare color themes, and floating animations */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {STORY_CARDS.map((card, idx) => (

@@ -204,101 +204,6 @@ export const StorehouseShowcase: React.FC = () => {
               d="M 0 140 C 150 60, 300 60, 450 140 C 600 220, 800 50, 1000 50 C 1200 50, 1350 170, 1440 170 L 1440 0 L 0 0 Z"
               fill={windowWidth >= 1024 ? 'url(#editorialSplit)' : '#FAF8F5'}
             />
-            {/* Floating Bubble 1 (Large - Left) */}
-            <motion.circle
-              cx={220}
-              cy={70}
-              r={20}
-              fill="#FAF8F5"
-              className="pointer-events-auto cursor-pointer"
-              style={{ transformOrigin: '220px 70px' }}
-              animate={{
-                y: [0, -14, 0],
-                x: [0, 8, 0],
-              }}
-              whileHover={{
-                scale: 1.3,
-                y: -22,
-                transition: { type: 'spring', stiffness: 300, damping: 15 },
-              }}
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-            {/* Floating Bubble 2 (Medium - Center-Left) */}
-            <motion.circle
-              cx={520}
-              cy={50}
-              r={12}
-              fill="#FAF8F5"
-              className="pointer-events-auto cursor-pointer"
-              style={{ transformOrigin: '520px 50px' }}
-              animate={{
-                y: [0, -10, 0],
-                x: [0, -6, 0],
-              }}
-              whileHover={{
-                scale: 1.35,
-                y: -15,
-                transition: { type: 'spring', stiffness: 300, damping: 15 },
-              }}
-              transition={{
-                duration: 5.5,
-                delay: 1.2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-            {/* Floating Bubble 3 (Small - Center-Right) */}
-            <motion.circle
-              cx={960}
-              cy={45}
-              r={8}
-              fill="#FAF8F5"
-              className="pointer-events-auto cursor-pointer"
-              style={{ transformOrigin: '960px 45px' }}
-              animate={{
-                y: [0, -8, 0],
-                x: [0, 5, 0],
-              }}
-              whileHover={{
-                scale: 1.4,
-                y: -12,
-                transition: { type: 'spring', stiffness: 300, damping: 15 },
-              }}
-              transition={{
-                duration: 4.8,
-                delay: 0.5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-            {/* Floating Bubble 4 (Medium-Large - Right) */}
-            <motion.circle
-              cx={1240}
-              cy={55}
-              r={15}
-              fill="#FAF8F5"
-              className="pointer-events-auto cursor-pointer"
-              style={{ transformOrigin: '1240px 55px' }}
-              animate={{
-                y: [0, -12, 0],
-                x: [0, -7, 0],
-              }}
-              whileHover={{
-                scale: 1.3,
-                y: -18,
-                transition: { type: 'spring', stiffness: 300, damping: 15 },
-              }}
-              transition={{
-                duration: 6.5,
-                delay: 2.1,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
           </svg>
         </div>
 
@@ -334,17 +239,6 @@ export const StorehouseShowcase: React.FC = () => {
             className="absolute w-10 h-10 rounded-full blur-[6px] opacity-80 left-20 -bottom-4 pointer-events-none"
           />
 
-          {/* Vertical Pill Tag (matching the Vespa vertical pill) */}
-          <div className="absolute left-6 lg:left-12 top-10 flex flex-col items-center gap-4 z-30 pointer-events-none">
-            <div className="bg-white/95 backdrop-blur-md px-2 py-4 rounded-full border border-white/40 flex items-center justify-center [writing-mode:vertical-lr] select-none shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
-              <span className="text-[9px] font-black uppercase text-[#2C2724] tracking-[0.25em]">
-                LUMÉRA ATELIER
-              </span>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-[#1C1917] text-white flex items-center justify-center shadow-md">
-              <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </div>
 
           {/* Floating Pill Tags Cloud (bottom-right) */}
           <div className="absolute bottom-6 right-6 lg:bottom-12 lg:right-16 flex flex-wrap gap-1.5 max-w-[220px] sm:max-w-xs justify-end z-30 pointer-events-none">

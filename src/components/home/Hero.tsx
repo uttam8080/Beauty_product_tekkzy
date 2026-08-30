@@ -283,10 +283,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Wavy Bubble Section Divider */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 pointer-events-none">
-        <WavyBubbleDivider bottomColor="#ffffffff" bubbleColor="#ffffffff" height={110} />
-      </div>
+
     </section>
   );
 };

@@ -112,8 +112,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <Heart className={`w-4 h-4 transition-transform ${isLiked ? 'fill-current scale-110' : ''}`} />
         </button>
 
-        {/* Product Images (Primary & Hover swap) */}
-        <Link to={`/product/${product.id}`} className="block w-full h-full">
+        {/* Product Image (Static on hover, no swap) */}
+        <Link to={`/product/${product.id}`} className="block w-full h-full overflow-hidden">
           <img
             src={product.images[0]}
             alt={product.name}
@@ -122,24 +122,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop';
             }}
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 ${
-              isHovered && product.hoverImage ? 'opacity-0' : 'opacity-100'
-            }`}
+            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           />
-          {product.hoverImage && (
-            <img
-              src={product.hoverImage}
-              alt={`${product.name} alternate view`}
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = product.images[0] || 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop';
-              }}
-              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 ${
-                isHovered ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
-              } transition-transform duration-700 ease-out`}
-            />
-          )}
         </Link>
 
         {/* Hover Quick Action Bar */}
@@ -199,17 +183,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {/* Product Name */}
           <Link to={`/product/${product.id}`} className="group/title block">
             <h3
-              style={
-                [
-                  'Celestial Gel-to-Milk Silken Cleanser',
-                  'Dew Drop Polyglutamic Peptide Serum',
-                  'Cloud Skin Ceramide Barrier Soufflé',
-                  'Luminary Liquid Champagne Highlighter'
-                ].includes(product.name)
-                  ? { fontFamily: "'Minggola', 'Squealer', sans-serif", fontSize: '1.8em' }
-                  : undefined
-              }
-              className="text-sm sm:text-[15px] font-serif font-medium text-[#2C2724] group-hover/title:text-[#8C6D53] transition-colors line-clamp-1"
+              style={{ fontFamily: "'Minggola', 'Squealer', sans-serif", fontSize: '1.8em' }}
+              className="font-medium text-[#2C2724] group-hover/title:text-[#8C6D53] transition-colors line-clamp-1"
             >
               {product.name}
             </h3>

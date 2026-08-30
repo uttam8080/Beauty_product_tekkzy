@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="main-footer" className="relative bg-[#211D1A] text-[#FAF8F5] pt-16 pb-12 mt-12 sm:mt-16">
+    <footer id="main-footer" className="relative bg-[#211D1A] text-[#FAF8F5] pt-16 pb-12">
       {/* Curved Section Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[99%] pointer-events-none">
         <svg

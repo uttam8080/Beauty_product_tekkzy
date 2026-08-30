@@ -98,11 +98,11 @@ export const EditorialSection: React.FC = () => {
       const rect = containerRef.current.getBoundingClientRect();
       const containerTop = window.scrollY + rect.top;
       const containerHeight = containerRef.current.offsetHeight - window.innerHeight;
-      
+
       // Targets correspond to the center of the settled range for each slide
       const targets = [0.04, 0.34, 0.66, 0.96];
       const targetScroll = containerTop + (containerHeight * targets[index]);
-      
+
       window.scrollTo({
         top: targetScroll,
         behavior: 'smooth'
@@ -119,17 +119,17 @@ export const EditorialSection: React.FC = () => {
       {/* Sticky container that stays pinned in view during the scroll through all images */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-[linear-gradient(to_bottom,#E5ECE4_50%,#FAF8F5_50%)] lg:bg-[linear-gradient(to_right,#E5ECE4_50%,#FAF8F5_50%)]">
         <div className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-16 items-center">
-            
+
             {/* ========================================================= */}
             {/* LEFT: SCROLL-DRIVEN STICKY IMAGE CONTAINER               */}
             {/* ========================================================= */}
             <div className="lg:col-span-6 relative">
-              
+
               {/* Image Frame Container (Optimized for responsive viewport dimensions) */}
               <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[38vh] sm:max-h-[50vh] lg:max-h-[70vh] w-full max-w-md lg:max-w-none mx-auto rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl bg-[#E8DCCE] border border-[#E8DCCE]">
-                
+
                 {/* Scroll-Driven Vertical Stack of Images */}
                 {EDITORIAL_SLIDES.map((slide, idx) => (
                   <motion.div
@@ -172,7 +172,7 @@ export const EditorialSection: React.FC = () => {
             {/* RIGHT: EDITORIAL CONTENT (REMAINS COMPLETELY STATIC)      */}
             {/* ========================================================= */}
             <div className="lg:col-span-6 space-y-3.5 sm:space-y-5 lg:space-y-6">
-              
+
               <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#8C6D53] block">
                 The LUMÉRA Philosophy
               </span>
