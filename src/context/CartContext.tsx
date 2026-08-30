@@ -34,7 +34,7 @@ const STANDARD_SHIPPING_FEE = 99;
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('lumera_cart');
+      const saved = localStorage.getItem('velure_cart');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -45,7 +45,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
   const [appliedPromo, setAppliedPromo] = useState<string | null>(() => {
     try {
-      return localStorage.getItem('lumera_promo') || null;
+      return localStorage.getItem('velure_promo') || null;
     } catch {
       return null;
     }
@@ -53,7 +53,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   useEffect(() => {
     try {
-      localStorage.setItem('lumera_cart', JSON.stringify(items));
+      localStorage.setItem('velure_cart', JSON.stringify(items));
     } catch {
       // ignore
     }
@@ -62,9 +62,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => {
     try {
       if (appliedPromo) {
-        localStorage.setItem('lumera_promo', appliedPromo);
+        localStorage.setItem('velure_promo', appliedPromo);
       } else {
-        localStorage.removeItem('lumera_promo');
+        localStorage.removeItem('velure_promo');
       }
     } catch {
       // ignore
@@ -140,7 +140,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
     return {
       success: false,
-      message: 'Invalid promo code. Try LUMERA10 or GLOW20'
+      message: 'Invalid promo code. Try velure10 or GLOW20'
     };
   };
 

@@ -28,7 +28,7 @@ export const LoadingScreen: React.FC = () => {
             className="flex flex-col items-center gap-3"
           >
             <span className="text-3xl sm:text-4xl font-serif tracking-[0.25em] font-light text-[#2C2724] uppercase">
-              LUMÉRA
+              VÉLURE
             </span>
             <div className="w-12 h-[1px] bg-[#8C6D53]/40 animate-pulse" />
             <span className="text-[10px] tracking-[0.3em] uppercase text-[#8C6D53] font-medium">

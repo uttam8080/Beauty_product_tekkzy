@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block">
               <span className="font-serif text-2xl tracking-[0.25em] font-medium text-[#FAF8F5] uppercase">
-                LUMÉRA
+                VÉLURE
               </span>
               <p className="text-[10px] tracking-[0.3em] uppercase text-[#DDB68C] -mt-0.5">Beauty, Refined</p>
             </Link>
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/about#ingredients" className="hover:text-[#FAF8F5] transition-colors">Ingredient Transparency</Link></li>
               <li><Link to="/about#sustainability" className="hover:text-[#FAF8F5] transition-colors">Sustainability & Glass</Link></li>
               <li><Link to="/about" className="hover:text-[#FAF8F5] transition-colors">Clinical Studies</Link></li>
-              <li><Link to="/about" className="hover:text-[#FAF8F5] transition-colors">The LUMÉRA Journal</Link></li>
+              <li><Link to="/about" className="hover:text-[#FAF8F5] transition-colors">The VÉLURE Journal</Link></li>
             </ul>
           </div>
 
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
               <li><span className="hover:text-[#FAF8F5] cursor-pointer transition-colors">Complimentary Shipping</span></li>
               <li><span className="hover:text-[#FAF8F5] cursor-pointer transition-colors">30-Day Ritual Guarantee</span></li>
               <li><span className="hover:text-[#FAF8F5] cursor-pointer transition-colors">Track Your Order</span></li>
-              <li><span className="hover:text-[#FAF8F5] cursor-pointer transition-colors">care@lumera.beauty</span></li>
+              <li><span className="hover:text-[#FAF8F5] cursor-pointer transition-colors">care@velure.beauty</span></li>
             </ul>
 
             <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E8DCCE] mb-3">Follow Us</h3>

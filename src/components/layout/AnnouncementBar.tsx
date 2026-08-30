@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const MESSAGES = [
   'NEW ARRIVALS JUST DROPPED  •  THE GLOW COLLECTION',
-  'USE CODE "LUMERA10" FOR 10% OFF YOUR FIRST RITUAL'
+  'USE CODE "velure10" FOR 10% OFF YOUR FIRST RITUAL'
 ];
 
 export const AnnouncementBar: React.FC = () => {

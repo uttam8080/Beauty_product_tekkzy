@@ -38,7 +38,7 @@ export const StorehouseShowcase: React.FC = () => {
       id: 'sc-1',
       productId: 'dew-drop-serum',
       shortName: 'Glass Drop',
-      tagline: 'FEEL TRUE HYDRATION WITH LUMÉRA DROP - FOLLOW GLOW',
+      tagline: 'FEEL TRUE HYDRATION WITH VÉLURE DROP - FOLLOW GLOW',
       spec: '50ml × 1.7oz',
       bgColor: '#D5EBE6', // soft mint/sky green for white tube
       bubbleColor: '#A8DCD0',
@@ -391,7 +391,7 @@ export const StorehouseShowcase: React.FC = () => {
 
             {/* Giant Heading */}
             <h2 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-[#1C1917] leading-[1.1] tracking-tight mb-6">
-              Feel True Comfort <br className="hidden sm:inline" /> With Luméra Rituals - <br /> Follow Elegance
+              Feel True Comfort <br className="hidden sm:inline" /> With Vélure Rituals - <br /> Follow Elegance
             </h2>
 
             {/* Scroll Mouse Indicator */}

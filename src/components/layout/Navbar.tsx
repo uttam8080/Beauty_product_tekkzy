@@ -25,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
   const [activeCategoryKey, setActiveCategoryKey] = useState<string | null>(null);
   const [mobileExpandedCategory, setMobileExpandedCategory] = useState<string | null>(null);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('hero-section');
   
   // Search bar state inside navbar (Meesho style inline search)
   const [searchQuery, setSearchQuery] = useState('');
@@ -58,6 +59,50 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  // ScrollSpy for landing page sections
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const sections = ['hero-section', 'editorial-scroll-section', 'main-footer'];
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the first intersecting entry and set it active
+        const visible = entries.find(entry => entry.isIntersecting);
+        if (visible) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      { rootMargin: '-20% 0px -70% 0px' } 
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  const scrollToSection = (id: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const NAV_LINKS = [
+    { id: 'hero-section', label: 'Home' },
+    { id: 'editorial-scroll-section', label: 'Editorial' },
+    { id: 'main-footer', label: 'Contact' }
+  ];
 
   // Meesho exact categories list - 100% Curated Beauty & Cosmetics
   const meeshoCategories = [
@@ -143,7 +188,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
     : [];
 
   return (
-    <header id="lumera-main-header" className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs font-sans">
+    <header id="velure-main-header" className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs font-sans">
       
       {/* ========================================================= */}
       {/* TIER 1: LUXURY HAUTE BEAUTÉ TOP HEADER BAR               */}
@@ -152,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
         <div className="w-full px-4 sm:px-6 lg:px-8 py-3.5">
           <div className="flex items-center justify-between gap-4 lg:gap-8">
             
-            {/* Left: Mobile Toggle & Luméra Haute Beauté Logo */}
+            {/* Left: Mobile Toggle & Vélure Haute Beauté Logo */}
             <div className="flex items-center gap-4">
               <button
                 id="mobile-menu-toggle-btn"
@@ -163,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
 
-              {/* Luméra Bespoke Luxury Wordmark & Emblem */}
+              {/* Vélure Bespoke Luxury Wordmark & Emblem */}
               <Link
                 id="brand-logo-link"
                 to="/"
@@ -172,22 +217,42 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
               >
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1C1917] text-[#D8B48D] flex items-center justify-center shadow-xs border border-[#D8B48D]/30 group-hover:bg-[#2C2724] group-hover:scale-105 transition-all">
                   <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#D8B48D]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M44,15 C44,10 56,10 56,15 L56,22 L44,22 Z" fill="currentColor" opacity="0.8" />
-                    <rect x="40" y="22" width="20" height="8" rx="2" fill="currentColor" />
-                    <path d="M30,30 L70,30 C74,30 76,32 76,36 L76,82 C76,86 72,90 68,90 L32,90 C28,90 24,86 24,82 L24,36 C24,32 26,30 30,30 Z" stroke="currentColor" strokeWidth="4.5" strokeLinejoin="round" />
-                    <line x1="50" y1="30" x2="50" y2="70" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                    <path d="M28,68 C40,68 40,72 50,72 C60,72 60,68 72,68 L72,82 C72,85 70,86 67,86 L33,86 C30,86 28,85 28,82 Z" fill="currentColor" opacity="0.4" />
+                    <path d="M15,25 L50,85 L60,85 L25,25 Z" fill="currentColor" />
+                    <path d="M85,25 L50,85 L40,85 L75,25 Z" fill="currentColor" opacity="0.6" />
                   </svg>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[#1C1917] text-[20px] sm:text-[23px] font-serif tracking-[0.16em] uppercase font-bold leading-tight group-hover:text-[#9A724C] transition-colors">
-                    LUMÉRA
+                    VÉLURE
                   </span>
                   <span className="text-[8px] sm:text-[9px] tracking-[0.28em] uppercase font-medium text-[#8C6D53] leading-none">
                     HAUTE BEAUTÉ
                   </span>
                 </div>
               </Link>
+            </div>
+
+            {/* Center: ScrollSpy Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center gap-8">
+              {NAV_LINKS.map(link => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`relative py-1 text-xs font-bold uppercase tracking-[0.15em] transition-colors ${
+                    activeSection === link.id ? 'text-[#8C6D53]' : 'text-[#2C2523] hover:text-[#8C6D53]'
+                  }`}
+                >
+                  {link.label}
+                  {/* Subtle underline for active state */}
+                  {activeSection === link.id && (
+                    <motion.div
+                      layoutId="active-nav-underline"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#8C6D53]"
+                      initial={false}
+                    />
+                  )}
+                </button>
+              ))}
             </div>
 
           {/* Right Action Menu: Luxury Boutique Items */}
@@ -226,16 +291,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAccount }) =
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-[#1C1917] text-[#D8B48D] flex items-center justify-center border border-[#D8B48D]/30">
                       <svg className="w-4 h-4 text-[#D8B48D]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M44,15 C44,10 56,10 56,15 L56,22 L44,22 Z" fill="currentColor" opacity="0.8" />
-                        <rect x="40" y="22" width="20" height="8" rx="2" fill="currentColor" />
-                        <path d="M30,30 L70,30 C74,30 76,32 76,36 L76,82 C76,86 72,90 68,90 L32,90 C28,90 24,86 24,82 L24,36 C24,32 26,30 30,30 Z" stroke="currentColor" strokeWidth="4.5" strokeLinejoin="round" />
-                        <line x1="50" y1="30" x2="50" y2="70" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                        <path d="M28,68 C40,68 40,72 50,72 C60,72 60,68 72,68 L72,82 C72,85 70,86 67,86 L33,86 C30,86 28,85 28,82 Z" fill="currentColor" opacity="0.4" />
+                        <path d="M15,25 L50,85 L60,85 L25,25 Z" fill="currentColor" />
+                        <path d="M85,25 L50,85 L40,85 L75,25 Z" fill="currentColor" opacity="0.6" />
                       </svg>
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[#1C1917] text-lg font-serif font-bold tracking-[0.14em] uppercase leading-none">
-                        LUMÉRA
+                        VÉLURE
                       </span>
                       <span className="text-[7.5px] tracking-[0.25em] uppercase font-medium text-[#8C6D53] mt-0.5">
                         HAUTE BEAUTÉ

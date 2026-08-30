@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { SmoothRevealText } from '../ui/SmoothRevealText';
 
 interface StoryCard {
   id: string;
@@ -142,101 +143,7 @@ export const OurStorySection: React.FC = () => {
             d="M 0 140 C 150 60, 300 60, 450 140 C 600 220, 800 50, 1000 50 C 1200 50, 1350 170, 1440 170 L 1440 0 L 0 0 Z"
             fill="#ffffff"
           />
-          {/* Floating Bubble 1 (Large - Left) */}
-          <motion.circle
-            cx={220}
-            cy={70}
-            r={20}
-            fill="#FAF8F5"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '220px 70px' }}
-            animate={{
-              y: [0, -14, 0],
-              x: [0, 8, 0],
-            }}
-            whileHover={{
-              scale: 1.3,
-              y: -22,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Floating Bubble 2 (Medium - Center-Left) */}
-          <motion.circle
-            cx={520}
-            cy={50}
-            r={12}
-            fill="#FAF8F5"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '520px 50px' }}
-            animate={{
-              y: [0, -10, 0],
-              x: [0, -6, 0],
-            }}
-            whileHover={{
-              scale: 1.35,
-              y: -15,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 5.5,
-              delay: 1.2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Floating Bubble 3 (Small - Center-Right) */}
-          <motion.circle
-            cx={960}
-            cy={45}
-            r={8}
-            fill="#FAF8F5"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '960px 45px' }}
-            animate={{
-              y: [0, -8, 0],
-              x: [0, 5, 0],
-            }}
-            whileHover={{
-              scale: 1.4,
-              y: -12,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 4.8,
-              delay: 0.5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Floating Bubble 4 (Medium-Large - Right) */}
-          <motion.circle
-            cx={1240}
-            cy={55}
-            r={15}
-            fill="#FAF8F5"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '1240px 55px' }}
-            animate={{
-              y: [0, -12, 0],
-              x: [0, -7, 0],
-            }}
-            whileHover={{
-              scale: 1.3,
-              y: -18,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 6.5,
-              delay: 2.1,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
+
         </svg>
       </div>
 
@@ -263,13 +170,17 @@ export const OurStorySection: React.FC = () => {
         <div className="max-w-4xl mx-auto">
 
           <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#8C6D53] block mb-4 pointer-events-none">
-            Our Origins & Journey
+            <SmoothRevealText delay={0.1} type="block">
+              Our Origins & Journey
+            </SmoothRevealText>
           </span>
 
           {/* Headline in Getai Grotesk font */}
           <h2 className="font-getai uppercase text-3xl sm:text-4xl lg:text-[44px] text-[#2C2724] leading-[1.1] mb-8">
-            Born from a <br />
-            <span className="text-4xl sm:text-5xl lg:text-[56px] text-[#8C6D53] block mt-2">Desire for Better</span>
+            <span className="inline-block"><SmoothRevealText delay={0.2}>Born from a</SmoothRevealText></span> <br />
+            <span className="text-4xl sm:text-5xl lg:text-[56px] text-[#8C6D53] inline-block mt-2">
+              <SmoothRevealText delay={0.4}>Desire for Better</SmoothRevealText>
+            </span>
           </h2>
 
           {/* Grid of 3 Luxury Story Cards with custom shapes, skincare color themes, and floating animations */}

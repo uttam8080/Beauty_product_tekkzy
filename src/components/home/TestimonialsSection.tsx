@@ -17,101 +17,7 @@ export const TestimonialsSection: React.FC = () => {
             d="M 0 140 C 150 60, 300 60, 450 140 C 600 220, 800 50, 1000 50 C 1200 50, 1350 170, 1440 170 L 1440 0 L 0 0 Z"
             fill="#FAF8F5"
           />
-          {/* Floating Bubble 1 (Large - Left) */}
-          <motion.circle
-            cx={220}
-            cy={70}
-            r={20}
-            fill="#ffffff"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '220px 70px' }}
-            animate={{
-              y: [0, -14, 0],
-              x: [0, 8, 0],
-            }}
-            whileHover={{
-              scale: 1.3,
-              y: -22,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Floating Bubble 2 (Medium - Center-Left) */}
-          <motion.circle
-            cx={520}
-            cy={50}
-            r={12}
-            fill="#ffffff"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '520px 50px' }}
-            animate={{
-              y: [0, -10, 0],
-              x: [0, -6, 0],
-            }}
-            whileHover={{
-              scale: 1.35,
-              y: -15,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 5.5,
-              delay: 1.2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Floating Bubble 3 (Small - Center-Right) */}
-          <motion.circle
-            cx={960}
-            cy={45}
-            r={8}
-            fill="#ffffff"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '960px 45px' }}
-            animate={{
-              y: [0, -8, 0],
-              x: [0, 5, 0],
-            }}
-            whileHover={{
-              scale: 1.4,
-              y: -12,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 4.8,
-              delay: 0.5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Floating Bubble 4 (Medium-Large - Right) */}
-          <motion.circle
-            cx={1240}
-            cy={55}
-            r={15}
-            fill="#ffffff"
-            className="pointer-events-auto cursor-pointer"
-            style={{ transformOrigin: '1240px 55px' }}
-            animate={{
-              y: [0, -12, 0],
-              x: [0, -7, 0],
-            }}
-            whileHover={{
-              scale: 1.3,
-              y: -18,
-              transition: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            transition={{
-              duration: 6.5,
-              delay: 2.1,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
+
         </svg>
       </div>
 
@@ -144,7 +50,7 @@ export const TestimonialsSection: React.FC = () => {
           </h2>
           
           <p className="font-sans text-xs sm:text-sm text-[#786C62] tracking-wide font-medium leading-relaxed max-w-lg mx-auto pointer-events-none">
-            Real feedback from real members of the LUMÉRA beauty ritual. Clean skincare formulations designed to restore, protect, and illuminate.
+            Real feedback from real members of the VÉLURE beauty ritual. Clean skincare formulations designed to restore, protect, and illuminate.
           </p>
         </div>
 

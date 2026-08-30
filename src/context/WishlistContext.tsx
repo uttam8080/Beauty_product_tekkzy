@@ -17,7 +17,7 @@ const WishlistContext = createContext<WishlistContextType | undefined>(undefined
 export const WishlistProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [wishlistIds, setWishlistIds] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('lumera_wishlist');
+      const saved = localStorage.getItem('velure_wishlist');
       return saved ? JSON.parse(saved) : ['velvet-glow-foundation', 'dew-drop-serum'];
     } catch {
       return ['velvet-glow-foundation', 'dew-drop-serum'];
@@ -26,7 +26,7 @@ export const WishlistProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   useEffect(() => {
     try {
-      localStorage.setItem('lumera_wishlist', JSON.stringify(wishlistIds));
+      localStorage.setItem('velure_wishlist', JSON.stringify(wishlistIds));
     } catch {
       // ignore
     }

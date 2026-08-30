@@ -14,6 +14,7 @@ import { QuickViewProvider } from './context/QuickViewContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { SmoothScroll } from './components/layout/SmoothScroll';
 import { ToastContainer } from './components/ui/Toast';
 import { QuickViewModal } from './components/product/QuickViewModal';
 import { CartDrawer } from './components/cart/CartDrawer';
@@ -38,10 +39,11 @@ export default function App() {
         <WishlistProvider>
           <CartProvider>
             <QuickViewProvider>
-              <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#2C2724] selection:bg-[#E8DCCE] selection:text-[#2C2724]">
-                
-                {/* Scroll to Top on Route Change */}
-                <ScrollToTop />
+              <SmoothScroll>
+                <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#2C2724] selection:bg-[#E8DCCE] selection:text-[#2C2724]">
+                  
+                  {/* Scroll to Top on Route Change */}
+                  <ScrollToTop />
 
 
 
@@ -77,6 +79,7 @@ export default function App() {
                 <ToastContainer />
 
               </div>
+              </SmoothScroll>
             </QuickViewProvider>
           </CartProvider>
         </WishlistProvider>

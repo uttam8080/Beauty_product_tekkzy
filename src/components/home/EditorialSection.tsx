@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Droplets, ShieldCheck } from 'lucide-react';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'motion/react';
+import { SmoothRevealText } from '../ui/SmoothRevealText';
 
 interface EditorialSlide {
   id: string;
@@ -139,7 +140,7 @@ export const EditorialSection: React.FC = () => {
                   >
                     <img
                       src={slide.image}
-                      alt={`LUMÉRA Editorial - ${slide.tag}`}
+                      alt={`VÉLURE Editorial - ${slide.tag}`}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-center"
                       loading="eager"
@@ -174,21 +175,25 @@ export const EditorialSection: React.FC = () => {
             <div className="lg:col-span-6 space-y-3.5 sm:space-y-5 lg:space-y-6">
 
               <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#8C6D53] block">
-                The LUMÉRA Philosophy
+                <SmoothRevealText delay={0.1} type="block">
+                  The VÉLURE Philosophy
+                </SmoothRevealText>
               </span>
 
               <h2 className="text-[#2C2724] leading-[1.15]">
-                <span style={{ fontFamily: "'Kaushan Script', cursive" }} className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide">
-                  Your Ritual.
+                <span style={{ fontFamily: "'Kaushan Script', cursive" }} className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide inline-block">
+                  <SmoothRevealText delay={0.2}>Your Ritual.</SmoothRevealText>
                 </span>
                 <br />
-                <span className="italic font-light font-serif text-3xl sm:text-4xl lg:text-5xl text-[#8C6D53]">
-                  Your Glow.
+                <span className="italic font-light font-serif text-3xl sm:text-4xl lg:text-5xl text-[#8C6D53] inline-block mt-2">
+                  <SmoothRevealText delay={0.4}>Your Glow.</SmoothRevealText>
                 </span>
               </h2>
 
               <p className="text-sm sm:text-base text-[#5C5046] font-semibold leading-relaxed">
-                We believe beauty should feel like a sanctuary, not a chore. Every LUMÉRA formula is crafted at the intersection of high-potency dermatological science and sensorial pleasure — blending cold-pressed botanicals with multi-molecular peptides.
+                <SmoothRevealText delay={0.6} type="block">
+                  We believe beauty should feel like a sanctuary, not a chore. Every VÉLURE formula is crafted at the intersection of high-potency dermatological science and sensorial pleasure — blending cold-pressed botanicals with multi-molecular peptides.
+                </SmoothRevealText>
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-1">

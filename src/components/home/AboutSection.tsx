@@ -46,7 +46,7 @@ export const AboutSection: React.FC = () => {
             <div className="w-[82%] aspect-[4/5] rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(44,39,36,0.05)] border border-[#E8DCCE]/40 relative">
               <img 
                 src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop" 
-                alt="About LUMÉRA Skincare"
+                alt="About VÉLURE Skincare"
                 className="w-full h-full object-cover select-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/30 to-transparent" />
@@ -84,7 +84,7 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-6 flex flex-col justify-center select-text">
             
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#8C6D53] block mb-4 pointer-events-none">
-              The Luméra Philosophy
+              The Vélure Philosophy
             </span>
 
             {/* Main Editorial Signature Heading */}

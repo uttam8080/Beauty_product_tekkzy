@@ -46,7 +46,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) =
                   Sophia Reynolds
                 </h3>
                 <div className="flex items-center gap-1.5 text-xs text-[#8C6D53] mt-0.5">
-                  <span>Luméra VIP Gold Circle</span>
+                  <span>Vélure VIP Gold Circle</span>
                 </div>
               </div>
             </div>
@@ -187,7 +187,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) =
                   </h5>
                   <div className="flex items-center gap-2 text-[#5C5046]">
                     <CheckCircle className="w-3.5 h-3.5 text-[#8C6D53]" />
-                    <span>Earn 1 Point for every ₹10 spent on LUMÉRA rituals</span>
+                    <span>Earn 1 Point for every ₹10 spent on VÉLURE rituals</span>
                   </div>
                   <div className="flex items-center gap-2 text-[#5C5046]">
                     <CheckCircle className="w-3.5 h-3.5 text-[#8C6D53]" />

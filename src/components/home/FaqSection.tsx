@@ -13,7 +13,7 @@ const FAQ_ITEMS: FAQItem[] = [
     answer: 'We recommend starting with our Interactive Skincare Guide to identify your specific skin goals. Our collections are divided into clean, multi-peptide formulations designed for dry, combination, oily, and sensitive skin types.'
   },
   {
-    question: 'Are LUMÉRA formulations cruelty-free and vegan?',
+    question: 'Are VÉLURE formulations cruelty-free and vegan?',
     answer: 'Yes, 100% of our products are vegan and certified cruelty-free. We do not use any animal-derived ingredients or byproducts, and we do not test on animals at any stage of development.'
   },
   {

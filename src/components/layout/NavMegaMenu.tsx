@@ -33,7 +33,7 @@ export const MEESHO_MEGA_MENU_CONFIG: Record<string, MegaMenuData> = {
     href: '/shop',
     columns: [
       {
-        title: 'Featured On Luméra Beauty',
+        title: 'Featured On Vélure Beauty',
         isTinted: true,
         items: [
           { label: 'Top Beauty Brands', href: '/shop?filter=best-sellers' },

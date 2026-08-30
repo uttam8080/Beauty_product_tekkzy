@@ -18,7 +18,7 @@ export const NewsletterSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.25em] font-semibold text-[#8C6D53] mb-3">
-          <span>The LUMÉRA Circle</span>
+          <span>The VÉLURE Circle</span>
         </div>
 
         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2C2724] font-medium tracking-tight">
@@ -26,7 +26,7 @@ export const NewsletterSection: React.FC = () => {
         </h2>
 
         <p className="text-xs sm:text-sm text-[#786C62] font-light max-w-md mx-auto mt-3 leading-relaxed">
-          Sign up for new launches, beauty rituals, exclusive member offers, and 10% off your first order with code <span className="font-semibold text-[#2C2724]">LUMERA10</span>.
+          Sign up for new launches, beauty rituals, exclusive member offers, and 10% off your first order with code <span className="font-semibold text-[#2C2724]">velure10</span>.
         </p>
 
         <div className="mt-8 max-w-md mx-auto">

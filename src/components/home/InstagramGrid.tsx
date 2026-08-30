@@ -23,7 +23,7 @@ export const InstagramGrid: React.FC = () => {
             rel="noopener noreferrer"
             className="text-xs uppercase tracking-[0.2em] font-semibold text-[#8C6D53] hover:text-[#2C2724] hover:underline mt-1.5 inline-block"
           >
-            @lumera.beauty
+            @velure.beauty
           </a>
         </div>
 

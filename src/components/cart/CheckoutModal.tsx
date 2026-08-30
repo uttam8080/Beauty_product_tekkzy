@@ -79,7 +79,7 @@ export const CheckoutModal: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-serif text-lg sm:text-xl font-medium tracking-widest uppercase text-[#2C2724]">
-                  LUMÉRA
+                  VÉLURE
                 </span>
                 <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-[#8C6D53]/15 text-[#8C6D53] rounded-md">
                   Demo Checkout
@@ -331,7 +331,7 @@ export const CheckoutModal: React.FC = () => {
                     onClick={handleClose}
                     className="py-3 px-8 bg-[#2C2724] text-[#FAF8F5] hover:bg-[#8C6D53] text-xs font-semibold uppercase tracking-widest rounded-xl transition-colors"
                   >
-                    Continue Exploring LUMÉRA
+                    Continue Exploring VÉLURE
                   </button>
                 </div>
               </div>

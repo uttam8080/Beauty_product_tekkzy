@@ -228,7 +228,7 @@ export const CartDrawer: React.FC = () => {
                           type="text"
                           value={promoInput}
                           onChange={(e) => setPromoInput(e.target.value)}
-                          placeholder="Promo code (e.g. LUMERA10)"
+                          placeholder="Promo code (e.g. velure10)"
                           className="flex-1 px-3 py-2 text-xs bg-[#FAF8F5] border border-[#D9CBBE] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#8C6D53]"
                         />
                         <button

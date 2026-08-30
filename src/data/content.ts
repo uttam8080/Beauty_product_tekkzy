@@ -91,7 +91,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '3',
-    quote: 'The aesthetic, the clean glass packaging, the calming natural botanical scents — LUMÉRA turns my morning routine into a serene spa ritual.',
+    quote: 'The aesthetic, the clean glass packaging, the calming natural botanical scents — VÉLURE turns my morning routine into a serene spa ritual.',
     author: 'Rhea S.',
     location: 'New Delhi, IN',
     productName: 'Silk Elixir Hair & Body Duo',
@@ -174,7 +174,7 @@ export const BRAND_VALUES = [
 ];
 
 export const PROMO_CODES: Record<string, { discountPercent: number; description: string }> = {
-  'LUMERA10': { discountPercent: 10, description: '10% off your entire order' },
+  'velure10': { discountPercent: 10, description: '10% off your entire order' },
   'GLOW20': { discountPercent: 20, description: '20% off luxury rituals' },
   'WELCOME15': { discountPercent: 15, description: '15% welcome discount for new members' }
 };
